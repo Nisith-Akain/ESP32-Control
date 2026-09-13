@@ -1,0 +1,56 @@
+/*
+ * Design tokens for the ESP32 Control UI.
+ *
+ * Neutral, functional palette only — per spec, no decorative color. Every
+ * component in this app should reference these variables rather than
+ * hardcoding a color/spacing/font/radius value. If a later ticket
+ * (FE-2..FE-5) needs a new token, add it here, don't invent one inline.
+ */
+:root {
+  /* --- Color: grayscale surface/text/border scale --- */
+  --color-bg: #f4f4f5;
+  --color-surface: #ffffff;
+  --color-surface-muted: #ececed;
+  --color-border: #d6d6d8;
+  --color-text: #1c1c1e;
+  --color-text-muted: #6b6b6e;
+  --color-text-inverse: #ffffff;
+
+  /* --- Color: functional accents — used ONLY for their named meaning,
+     never decoratively. --- */
+  --color-focus: #1c1c1e;          /* focus ring / active nav item / primary button */
+  --color-danger: #b3261e;         /* error text/borders only */
+  --color-success: #2e7d32;        /* device status: online (FE-2) */
+  --color-neutral-status: #8a8a8e; /* device status: offline/unknown (FE-2), disabled controls */
+
+  /* --- Typography --- */
+  --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-sm: 0.8125rem;
+  --font-size-base: 0.9375rem;
+  --font-size-lg: 1.125rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* --- Spacing scale --- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* --- Shape / elevation --- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --border-width: 1px;
+  --shadow-elevation: 2px 0 6px rgba(0, 0, 0, 0.08); /* mobile sidebar drawer only */
+
+  /* --- Layout constants --- */
+  --nav-height: 52px;
+  --sidebar-width: 200px;
+  /* Documented breakpoint value. CSS custom properties cannot be used inside
+     @media conditions, so component CSS files repeat this literal (768px) —
+     keep them in sync with this value if it ever changes. */
+  --responsive-breakpoint: 768px;
+}
